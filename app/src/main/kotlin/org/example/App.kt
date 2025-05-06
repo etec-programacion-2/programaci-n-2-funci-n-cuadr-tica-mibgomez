@@ -10,5 +10,12 @@ fun main() {
     if (a > 0) {
         println ("Funcion cuadratica:")
         println ("$a x² + $b x + $c")
+        calcular(a,b,c)
+    }
+}
+fun calcular(a:Int, b:Int, c:Int) {
+    for (x in -5..5) {
+        var y = a*(x*x)+b*x+c
+        println ("Para x = $x , y vale $y")
     }
 }
