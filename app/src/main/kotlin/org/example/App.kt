@@ -3,27 +3,27 @@
  */
 package org.example
 
-fun main() {
+fun main() { // entra a la funcion main y asigna valores a a,b y c
     val a = +3
     val b = +2
     val c = -6
-    if (a == 0) {
+    if (a == 0) { // si a vale cero no se realiza todo el codigo
         println ("no")
         return
     }
-    println ("Funcion cuadratica:")
+    println ("Funcion cuadratica:") //muestra los valores de a, b y c en una funcion cuadratica
     println ("$a + x² + $b x + $c")
     calcular(a,b,c)
     raices(a.toDouble(),b.toDouble(),c.toDouble())
     
 }
-fun calcular(a:Int, b:Int, c:Int) {
+fun calcular(a:Int, b:Int, c:Int) { //calcula valores de y para valores de x del -5 al 5
     for (x in -5..5) {
         var y = a*(x*x)+b*x+c
         println ("Para x = $x , y vale $y")
     }
 }
-fun raices(a:Double, b:Double, c:Double) {
+fun raices(a:Double, b:Double, c:Double) { // calcula las raices de la funcion utilizando la discriminante
     val discriminante = (b*b)-4*a*c
     when {
         discriminante > 0 -> {
