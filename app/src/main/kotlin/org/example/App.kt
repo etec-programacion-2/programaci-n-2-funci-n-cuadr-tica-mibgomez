@@ -4,18 +4,43 @@
 package org.example
 
 fun main() {
-    val a = 3
-    val b = 2
-    val c = 6
-    if (a > 0) {
-        println ("Funcion cuadratica:")
-        println ("$a x² + $b x + $c")
-        calcular(a,b,c)
+    val a = +3
+    val b = +2
+    val c = -6
+    if (a == 0) {
+        println ("no")
+        return
     }
+    println ("Funcion cuadratica:")
+    println ("$a + x² + $b x + $c")
+    calcular(a,b,c)
+    raices(a.toDouble(),b.toDouble(),c.toDouble())
+    
 }
 fun calcular(a:Int, b:Int, c:Int) {
     for (x in -5..5) {
         var y = a*(x*x)+b*x+c
         println ("Para x = $x , y vale $y")
     }
+}
+fun raices(a:Double, b:Double, c:Double) {
+    val discriminante = (b*b)-4*a*c
+    when {
+        discriminante > 0 -> {
+            val raiz1 = (-b + Math.sqrt(discriminante)) / (2 * a)
+            val raiz2 = (-b - Math.sqrt(discriminante)) / (2 * a)
+            println("La ecuación tiene dos raíces reales:")
+            println("x₁ = $raiz1")
+            println("x₂ = $raiz2")
+        }
+        discriminante == 0.0 -> {
+            val raiz = -b / (2 * a)
+            println("La ecuación tiene una raíz real doble:")
+            println("x = $raiz")
+        }
+        else -> {
+            println("La ecuación no tiene raíces reales")
+        }
+    }
+    
 }
